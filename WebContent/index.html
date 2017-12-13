@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<title>Friendbook</title>
+	    <!-- *** Load the jQuery and jQueryUI libraries here. *** -->		
+		<!-- *** Load jQueryUI default CSS from Google CDN. *** -->
+	  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+		<!-- The following line loads the Google Map API -->
+		<!-- *** Insert your Google Map API key in the line below. *** -->
+		<script src="https://maps.google.com/maps/api/js?key=AIzaSyDzZ6cTEpuK30GWAqdG4blQVWk-ODwwFRc"></script>	
+		
+		<!-- *** Load local script. *** -->
+		<script src="script/index.js"></script>
+		<link rel="stylesheet" href="css/index.css">
+		
+		  <script>
+  			$( function() {
+    			$( "#tabs" ).tabs();
+  			} );
+  		 </script>
+		
+	</head>
+	<body>
+		<header>
+			<h1>Find a Friend</h1>
+		</header>
+		<div id="tabs">
+ 			 <ul>
+    			<li><a href="#tabs-1">Map</a></li>
+    			<li><a href="#tabs-2">Subscription Management</a></li>
+  			</ul>
+  			<div id = "tabs-1">
+				<section>
+					<!-- *** <form method="post" action="api/user"> *** -->
+							<p>User ID:</p>
+								<input id="idInput" type="text">
+								<button type="submit" id="logIn">Log in</button>
+								<button type="submit" id="submitLoc">Submit Location</button>
+					<!-- *** </form> *** -->
+				</section>
+				<div>
+				<ul id="friendList">
+				</ul>
+				</div>
+			    <!-- Section for showing Google Map. Empty for the moment. It will be populated by JS. -->
+				<section id="map">
+			    </section>
+		    </div>
+		    <div id="tabs-2">
+		    	<p>Send a request</p>
+		    	<input id="requestInput" type="text">
+		    	<button id="sendRequest">Send</button>
+		    	<ul id="requests">
+				</ul>
+		    </div>
+		</div>
+	</body>
+</html>
